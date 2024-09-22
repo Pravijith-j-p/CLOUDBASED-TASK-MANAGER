@@ -19,7 +19,7 @@ const PORT =process.env.PORT || 5000
 const app =express();
 
 app.use(cors({
-    origin :['http://localhost:3000', "http://localhost:3001"],
+    origin :['http://localhost:3000', "http://localhost:3001","https://cloudbased-task-manager.onrender.com"],
     methods :["GET", "POST", "PUT", "DELETE"],
     credentials :true,
 })
