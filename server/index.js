@@ -19,7 +19,7 @@ const PORT =process.env.PORT || 5000
 const app =express();
 
 app.use(cors({
-    origin :['http://localhost:3000', "http://localhost:3001","https://cloudbased-task-manager-1.onrender.com","https://cloud-taskmanager.netlify.app/"],
+    origin :['http://localhost:3000', "http://localhost:3001","https://cloudbased-task-manager-1.onrender.com","https://cloud-taskmanager.netlify.app"],
     methods :["GET", "POST", "PUT", "DELETE"],
     credentials :true,
 })
@@ -34,5 +34,9 @@ app.use("/api",routes);
 
 app.use(routeNotFound);
 app.use(errorHandler)
+
+app.get('/', (req, res) => {
+    res.send("API is running successfully.");
+});
 
 app.listen(PORT,()=> console.log(`Server is listening on ${PORT}`));
