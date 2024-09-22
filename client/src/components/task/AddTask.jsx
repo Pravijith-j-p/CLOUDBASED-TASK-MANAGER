@@ -8,7 +8,7 @@ import SelectList from "../SelectList";
 import { BiImages } from "react-icons/bi";
 import Button from "../Button";
 import {getStorage ,ref,getDownloadURL ,uploadBytesResumable} from "firebase/storage";
-import { app } from "../../utils/firebase";
+import { app ,analytics} from "../../utils/firebase";
 import { useCreateTaskMutation, useUpdateTaskMutation } from "../../redux/slices/api/taskApiSlice";
 import { toast } from "sonner";
 import { dateFormatter } from "../../utils";
