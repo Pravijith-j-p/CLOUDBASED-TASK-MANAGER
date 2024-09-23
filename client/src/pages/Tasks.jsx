@@ -68,13 +68,14 @@ const Tasks = () => {
           </div>
         )}
 
-        {selected !== 1 ? (
-          <BoardView tasks={data?.tasks} />
-        ) : (
-          <div className='w-full'>
-            <Table tasks={data?.tasks} />
-          </div>
-        )}
+{selected !== 1 ? (
+  <BoardView tasks={data?.tasks || []} />
+) : (
+  <div className='w-full'>
+    <Table tasks={data?.tasks || []} />
+  </div>
+)}
+
       </Tabs>
 
       <AddTask open={open} setOpen={setOpen} />
